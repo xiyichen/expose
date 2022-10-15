@@ -172,7 +172,12 @@ class MemoryPinning(object):
             if isinstance(self.img_list, ImageList):
                 self.img_list.pin_memory()
             elif isinstance(self.img_list, (list, tuple)):
-                self.img_list = [x.pin_memory() for x in self.img_list]
+                img_list = []
+                for img in self.img_list:
+                    if img is not None:
+                        img_list.append(img.pin_memory())
+
+                self.img_list = img_list
         return (
             self.img_list,
             self.images.pin_memory(),
