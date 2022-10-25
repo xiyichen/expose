@@ -22,7 +22,7 @@ def read_keypoints(keypoint_fn, use_hands=True, use_face=True,
         data = json.load(keypoint_file)
 
     all_keypoints = []
-    for idx, person_data in enumerate(data['people']):
+    for idx, person_data in enumerate(data['people'][:1]):
         body_keypoints = np.array(person_data['pose_keypoints_2d'],
                                   dtype=np.float32)
         body_keypoints = body_keypoints.reshape([-1, 3])
