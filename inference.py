@@ -310,12 +310,12 @@ def main(
 
             if save_mesh:
                 # Store the mesh predicted by the body-crop network
-                naive_mesh = o3d.geometry.TriangleMesh()
-                naive_mesh.vertices = Vec3d(
-                    model_vertices[idx] + hd_params['transl'][idx])
-                naive_mesh.triangles = Vec3i(faces)
-                mesh_fname = osp.join(curr_out_path, f'body_{fname}.ply')
-                o3d.io.write_triangle_mesh(mesh_fname, naive_mesh)
+                # naive_mesh = o3d.geometry.TriangleMesh()
+                # naive_mesh.vertices = Vec3d(
+                #     model_vertices[idx] + hd_params['transl'][idx])
+                # naive_mesh.triangles = Vec3i(faces)
+                # mesh_fname = osp.join(curr_out_path, f'body_{fname}.ply')
+                # o3d.io.write_triangle_mesh(mesh_fname, naive_mesh)
 
                 # Store the final mesh
                 expose_mesh = o3d.geometry.TriangleMesh()
